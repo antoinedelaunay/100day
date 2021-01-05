@@ -1,0 +1,40 @@
+
+ :root {
+     --axe-y: 1rem;
+     --color-black: #000;
+ }
+
+.body {
+    background-color: rgb(131, 224, 189);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.centerElement {
+    font-size: 60px;
+    text-shadow:
+    -1px -1px 0 var(--color-black),  
+     1px -1px 0 var(--color-black),
+     -1px 1px 0 var(--color-black),
+      1px 1px 0 var(--color-black),
+    
+      4px 4px 0 rgba(0, 0, 0, .2);
+
+    animation: rainbow 1.5s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        color: blue;
+    }
+    50% {
+        color: red;
+        transform: translatey(calc(var(--axe-y) * -1));
+    }
+    100% {
+        color: green;
+        transform: translatey(var(--axe-y));
+    }
+}
