@@ -1,8 +1,7 @@
-
- :root {
-     --axe-y: 1rem;
-     --color-black: #000;
- }
+:root {
+    --axe-y: 1rem;
+    --color-black: #000;
+}
 
 .body {
     background-color: rgb(131, 224, 189);
@@ -14,27 +13,40 @@
 
 .centerElement {
     font-size: 60px;
-    text-shadow:
-    -1px -1px 0 var(--color-black),  
-     1px -1px 0 var(--color-black),
-     -1px 1px 0 var(--color-black),
-      1px 1px 0 var(--color-black),
-    
-      4px 4px 0 rgba(0, 0, 0, .2);
+    text-shadow: -1px -1px 0 var(--color-black), 1px -1px 0 var(--color-black), -1px 1px 0 var(--color-black),
+        1px 1px 0 var(--color-black), 4px 4px 0 rgba(0, 0, 0, 0.2);
 
     animation: rainbow 1.5s ease-in-out infinite;
 }
 
-@keyframes rainbow {
+.colorisation {
+    animation: color 1.5s ease-in-out infinite;
+}
+
+@keyframes color {
     0% {
         color: blue;
     }
+    25% {
+        color: yellow;
+    }
     50% {
         color: red;
-        transform: translatey(calc(var(--axe-y) * -1));
+    }
+    75% {
+        color: purple;
     }
     100% {
         color: green;
+    }
+}
+
+@keyframes rainbow {
+    0%,
+    100% {
         transform: translatey(var(--axe-y));
+    }
+    50% {
+        transform: translatey(calc(var(--axe-y) * -1));
     }
 }
